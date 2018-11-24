@@ -294,7 +294,7 @@ background-size: 90%
 class: inverse, center, middle
 # Host Rmd's online with GitHub Pages
 ---
-background-image: url(img/github-pages.png)
+background-image: url(img/github-pages.PNG)
 background-position: center
 background-size: 90%
 
