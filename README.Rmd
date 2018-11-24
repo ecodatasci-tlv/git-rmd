@@ -7,7 +7,9 @@ output:
         keep_md: true
 ---
 
-
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
 
 In this workshop, you will learn the basics of git/GitHub, create an RMarkdown file, and learn how to host it on the web using GitHub pages!
 
