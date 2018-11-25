@@ -247,13 +247,14 @@ https://ourcodingclub.github.io/2016/11/24/rmarkdown-1.html
 
 A lightweight text editor originally built to be presented as html
 
-<p><img src="https://tinyurl.com/ybavddzr" width=110%>
+<p><img src="https://raw.githubusercontent.com/ecodatasci-tlv/git-rmd/master/Markdown_image.jpeg" width=90%>
 
+---
 ## __What is Rmarkdowm?__
 
 A __one-stop-shop__ for writing code and sharing your work with various formats
 
-<p><img src="https://tinyurl.com/yc9aqyna" width=110%>
+<p><img src="https://tinyurl.com/yc9aqyna" center width=30%>
 
 ---
 
@@ -284,18 +285,14 @@ output: html_document
 ---
 
 ```
-<p><img src="https://d2g3cvnn69yis0.cloudfront.net/wp-content/uploads/2016/08/yaml-anyone.jpg" width=110%>
 
 ---
 ## Code chunk
 
-- The chink must be enclosed between ` ``` ` and then `{r}` at the top
+- The chunk must be enclosed between ` ``` ` and then `{r}` at the top
 - keybord shortcut: ctrl + Alt + I (Windows) or cmd + Alt + I (MacOS)
 
-
-<p><img src="https://tinyurl.com/ybpbbe4f" width=100%>
-
-
+<p><img src="https://tinyurl.com/ybpbbe4f" width=70%>
 
 ---
 ## __Plain text__
@@ -317,12 +314,19 @@ You create an Rmd file, then you knit it with knitr package, it is passed to one
 3. Write some plain text and some analyses in the code chunk
 4. Click on the knit botton at the top bar (or ctrl/cmd + shift + K)
 
-Congradulations!!! 🎉 🎊 🥳 You created your first Rmd file!! `r emo::ji("smile")`
+---
+__Congradulations!!!__ 🎉 🎊 🥳 You created your first Rmd file!! `r emo::ji("smile")`
+
+<p><img src="https://www.chronicle.com/blogs/profhacker/files/2018/01/markdowncat.jpg" width=100%>
+
 
 ---
 class: inverse, center, middle
 
 # __Rmd plain text syntax__
+
+<p><img src="https://raw.githubusercontent.com/ecodatasci-tlv/git-rmd/master/Markdown_image2.jpeg" width=120%>
+
 ---
 
 # __Headers__
@@ -388,24 +392,15 @@ https://ourcodingclub.github.io/2016/11/24/rmarkdown-1.html
 
 class: inverse, center, middle
 
-# __Webslite__
+# __Other formats of Rmarkdown___
+
+<p><img src="https://pbs.twimg.com/media/DcrW6_UWkAAVjnB.jpg" width=90%>
 
 ---
 
-## Files for the website
-
-- Has three files: index.html, index.Rmd, and _site.yml
-- The ___site.yml__ is where you configure the top bar of your website and how you nevigate through the pages
-- The __index.Rmd__ is where you write the content of your website
--The __index.html__ is updated when you render your website and is used to present it
-
----
-
-## The YAML header used for it
-
+## The YAML header for website
 Here is an example from the website used in our last session
 ```r
-
 ---
 title: "Visualizations in R"
 author: "Alex Slavenko and Maria Novosolov"
@@ -423,17 +418,18 @@ output:
 ```
 
 ---
-
-class: inverse, center, middle
-
 # __Books__
-
----
 
 ### - Writen similar to a webslite but has a different YAML header
 
 ### - Uses `bookdown` package to generate
 
+
+
+---
+More information and __websites__ and guidlines on how to build them can be found [here](https://bookdown.org/yihui/rmarkdown/websites.html)
+
+More information about how to build __books__ can be found [here](https://bookdown.org/yihui/rmarkdown/books.html)
 ---
 class: inverse, center, middle
 # Basic git flow ~ life cycle of a relationship
