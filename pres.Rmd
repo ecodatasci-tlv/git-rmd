@@ -16,6 +16,7 @@ output:
 options(htmltools.dir.version = FALSE)
 library(tidyverse)
 library(icon)
+library(emo)
 ```
 # `r icon::fa_check()` Check-in
 
@@ -61,7 +62,7 @@ background-size: cover
 Version control system that lives on your computer. Think "track changes" for files
 
 --
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Cropped-big-brother-is-watching-1984.png/800px-Cropped-big-brother-is-watching-1984.png" width=60%>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Cropped-big-brother-is-watching-1984.png/800px-Cropped-big-brother-is-watching-1984.png" width=60%></p>
 
 ---
 # `r fa_git()` is not
@@ -257,9 +258,9 @@ A __one-stop-shop__ for writing code and sharing your work with various formats
 
 - Research notebook ([R Notebook](https://bookdown.org/yihui/rmarkdown/notebook.html))
 - Reports ([html](https://bookdown.org/yihui/rmarkdown/html-document.html), [pdf](https://bookdown.org/yihui/rmarkdown/pdf-document.html), or [word](https://bookdown.org/yihui/rmarkdown/word-document.html))
-- Websites ([Rmarkdown wbsite](https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html)\ [blogdown](https://bookdown.org/yihui/rmarkdown/blogdown-start.html))
+- Websites ([RMarkdown website](https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html)/[blogdown](https://bookdown.org/yihui/rmarkdown/blogdown-start.html))
 - Books ([bookdown](https://bookdown.org/yihui/rmarkdown/books.html))
-- Presentations ([xringan](https://bookdown.org/yihui/rmarkdown/xaringan.html)\ [ioslides](https://bookdown.org/yihui/rmarkdown/ioslides-presentation.html))
+- Presentations ([xaringan](https://bookdown.org/yihui/rmarkdown/xaringan.html)\ [ioslides](https://bookdown.org/yihui/rmarkdown/ioslides-presentation.html))
 
 ---
 background-image: url(https://tinyurl.com/y9xex8fd)
@@ -267,7 +268,7 @@ background-position: center
 background-size: 100%
 ---
 # __The different parts of Rmarkdown__
-<p><img src="https://raw.githubusercontent.com/ecodatasci-tlv/datamanagement/master/rmarkdown/inline-1-heat.png" width=100%>
+<p><img src="https://raw.githubusercontent.com/ecodatasci-tlv/datamanagement/master/rmarkdown/inline-1-heat.png" width=100%></p>
 
 ---
 ## YAML header 
@@ -275,37 +276,35 @@ background-size: 100%
 - Must be enclosed in `---`
 - output section changes based on the type of ducument
 
-```r
+```
 ---
 title: "Edinburgh Biodiversity"
 author: John Doe
 date: 22/Oct/2016
 output: html_document
 ---
-
 ```
 ---
-## Code chunk (Fix this)
+## Code chunk 
 
-- The chink must be enclosed between ` ``` ` and then `{r}` at the top
-- keybord shortcut: ctrl + Alt + I (Windows) or cmd + Alt + I (MacOS)
+- The chunk must be enclosed with ` ``` `
+- `{r}` declares the coding language 
+- Keybord shortcut: `ctrl + alt + i` (Windows) or `cmd + alt + i` (MacOS)
 
-
-<p><img src="https://tinyurl.com/ybpbbe4f" width=100%>
-
-
+<p><img src="https://tinyurl.com/ybpbbe4f" width=100%></p>
 
 ---
 ## __Plain text__
 
-Here you write everything that isn't a code by using markdown related symbols to create headers, bold text , etc.
+Write everything that isn't code by using markdown symbols to create headers, bold text, etc.
 
 ---
 ## __Workflow of Rmd file__
 
-<p><img src="https://tinyurl.com/ycgusx7u" width=100%>
+<p><img src="https://tinyurl.com/ycgusx7u" width=100%></p>
 
-You create an Rmd file, then you knit it with knitr package, it is passed to one of the rendering packages like pandoc or LaTex, and the final format is created
+1. You create an Rmd file
+2. When you "knit" it with `knitr` package, the Rmd is passed to a rendering package such as pandoc or LaTex, and the final format is created
 
 ---
 # __Practice time__
@@ -325,7 +324,7 @@ class: inverse, center, middle
 
 # __Headers__
 
-```{r}
+```
 # Header 1
 ## Header 2
 ### Header 3
@@ -386,7 +385,7 @@ https://ourcodingclub.github.io/2016/11/24/rmarkdown-1.html
 
 class: inverse, center, middle
 
-# __Webslite__
+# __Website__
 
 ---
 
@@ -403,7 +402,6 @@ class: inverse, center, middle
 
 Here is an example from the website used in our last session
 ```r
-
 ---
 title: "Visualizations in R"
 author: "Alex Slavenko and Maria Novosolov"
@@ -501,7 +499,7 @@ In your repo settings (scroll down):
 - Use `index.html` to set a home page for your repo: username.github.io/reponame = username.github.io/reponame/index.html
 - use `toc_float` to add a floating table of contents to your RMarkdown webpage (more details [here](https://bookdown.org/yihui/rmarkdown/html-document.html))
 
-```{r eval = FALSE}
+```
 ---
 output:
   html_document:
@@ -514,10 +512,10 @@ output:
 class: inverse, center, middle
 # Let's collaborate!
 ---
-# `r icon::fa_check()` Check-in
+# Check-in   
 
 You should have:
-- a repository on GitHub
+- a repository on GitHub 
 - an RProject linked to the GitHub repository
 
 ---
