@@ -247,9 +247,13 @@ https://ourcodingclub.github.io/2016/11/24/rmarkdown-1.html
 
 A lightweight text editor originally built to be presented as html
 
+<p><img src="https://tinyurl.com/ybavddzr" width=110%>
+
 ## __What is Rmarkdowm?__
 
 A __one-stop-shop__ for writing code and sharing your work with various formats
+
+<p><img src="https://tinyurl.com/yc9aqyna" width=110%>
 
 ---
 
@@ -262,12 +266,8 @@ A __one-stop-shop__ for writing code and sharing your work with various formats
 - Presentations ([xringan](https://bookdown.org/yihui/rmarkdown/xaringan.html)\ [ioslides](https://bookdown.org/yihui/rmarkdown/ioslides-presentation.html))
 
 ---
-background-image: url(https://tinyurl.com/y9xex8fd)
-background-position: center
-background-size: 100%
----
 # __The different parts of Rmarkdown__
-<p><img src="https://raw.githubusercontent.com/ecodatasci-tlv/datamanagement/master/rmarkdown/inline-1-heat.png" width=100%>
+<p><img src="https://raw.githubusercontent.com/ecodatasci-tlv/git-rmd/master/rmd_example.png" width=110%>
 
 ---
 ## YAML header 
@@ -284,8 +284,10 @@ output: html_document
 ---
 
 ```
+<p><img src="https://d2g3cvnn69yis0.cloudfront.net/wp-content/uploads/2016/08/yaml-anyone.jpg" width=110%>
+
 ---
-## Code chunk (Fix this)
+## Code chunk
 
 - The chink must be enclosed between ` ``` ` and then `{r}` at the top
 - keybord shortcut: ctrl + Alt + I (Windows) or cmd + Alt + I (MacOS)
@@ -313,7 +315,7 @@ You create an Rmd file, then you knit it with knitr package, it is passed to one
 1. Open an Rmd file in the project you created before
 2. Choose the type of document you want to create
 3. Write some plain text and some analyses in the code chunk
-4. Click on the knit botton at the top bar
+4. Click on the knit botton at the top bar (or ctrl/cmd + shift + K)
 
 Congradulations!!! 🎉 🎊 🥳 You created your first Rmd file!! `r emo::ji("smile")`
 
