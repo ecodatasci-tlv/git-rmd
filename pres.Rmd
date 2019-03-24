@@ -27,6 +27,8 @@ To follow along, you should have:
 - a GitHub account - [create one now](https://github.com/) if you don't have one already!
 - git installed and connected to RStudio (detailed installation instructions at [Happy Git with R](https://happygitwithr.com/workshops.html#pre-workshop-set-up))
 
+## Slides link: http://bit.ly/hu-git
+
 ---
 This presentation is based on:
 
@@ -122,12 +124,11 @@ Take a moment to explore this repository:
 
 # https://github.com/isteves/typos
 
-- What is the repository name?
-- When was the repository first created?
-- What changes have been made to the repository?
-- What issues have been submitted?
-- What pull-requests (PRs) have been submitted?
-- Are there any forks or branches?
+- When was the .xlarge[repository `r emo::ji("folder")`] first created?
+- What .xlarge[commits `r emo::ji("ring")`] have been made to the repository?
+- What .xlarge[issues `r emo::ji("x")`] have been submitted?
+- What .xlarge[pull requests `r emo::ji("please")`] (PRs) have been submitted?
+- Are there any .xlarge[forks `r emo::ji("cutlery")`] or .xlarge[branches `r emo::ji("cactus")`]?
 
 ---
 background-image: url(img/github-account.png)
@@ -159,19 +160,6 @@ class: inverse
 background-image: url(http://ohi-science.org/data-science-training/img/create_repository_2.png)
 background-position: center
 background-size: 100%
-
----
-
-# Alternative workflow
-
-If you want to work off of an existing repository on GitHub...
-
-1. **Fork a repo** = make a copy of the repo on your account
-2. **Make a branch** = start an alternate timeline
-3. **Make a change**
-4. **Examine the differences**
-
-It's good practice to keep your "master" branch clean so that you can keep it synchronized with the original repository
 
 ---
 
@@ -213,7 +201,7 @@ background-size: 30%, 100%
 ---
 class: inverse, center, middle
 
-# Inspect your repository
+# Inspect your repository `r emo::ji("detective")`
 
 ---
 class: inverse
@@ -259,10 +247,12 @@ class: exercise
 
 # Practice time
 
-1. Open an Rmd file in the project you created before
-2. Choose the type of document you want to create
-3. Write some plain text and some analyses in the code chunk
-4. Click on the knit botton at the top bar (or ctrl/cmd + shift + K)
+1. Create an Rmd file in the project you created before (output = HTML)
+2. Make some edits
+3. Save as `index.Rmd`
+4. Knit (ctrl/cmd + shift + K)
+
+You end up with two new files: `index.Rmd` and `index.html`
 
 ---
 class: inverse, center, middle
@@ -321,12 +311,37 @@ background-image: url(img/github-flow.png)
 background-position: center
 background-size: 90%
 ---
+class: exercise
+
+# Your turn
+
+1. Pull - make sure your branch is up-to-date
+2. Make changes to `index.Rmd`. Save and knit
+3. Stage `r emo::ji("check")` `index.Rmd` and `r emo::ji("check")` `index.html` 
+4. Commit `r emo::ji("ring")`
+5. Push - sync with remote repository
+
+---
 class: inverse, center, middle
 # Host Rmd's online with GitHub Pages
 ---
 background-image: url(img/github-pages.PNG)
 background-position: center
 background-size: 90%
+
+---
+
+class: exercise
+
+# Your turn
+
+1. Turn on GitHub pages (from the repo home page, click Settings --> set source to _master branch_)
+2. Check out your new web page!
+
+## USERNAME.github.com/REPONAME
+
+_Note:_ if your file was not named `index.html`, then you'll have to add `/FILENAME.html` to the end of the URL
+
 ---
 # A few tricks
 
@@ -341,45 +356,68 @@ output:
     toc_float: true
 ---
 ```
-
 ---
 class: inverse, center, middle
 # Let's collaborate!
 ---
+# Contribute changes
 
-class: exercise
+If you want to work off of an existing repository on GitHub...
 
-# `r icon::fa_check()` Check-in
+1. **Fork a repo** = make a copy of the repo on your account
+2. **Make a branch** = start an alternate timeline
+3. **Make a change**
+4. **Examine the differences**
 
-You should have:
-- a repository on GitHub
-- an RProject linked to the GitHub repository 
+It's good practice to keep your "master" branch clean so that you can keep it synchronized with the original repository
 
 ---
-
 class: exercise
 
-Go into `Settings` --> `Collaborators`.  Add your neighbor as a collaborator
+# Your turn
 
+https://github.com/isteves/typos
+
+1. Fork the repo = make a copy of the repo on your account
+2. Make a branch = start an alternate timeline
+3. Make and commit a change
+4. Submit a pull request
+---
+# Collaborating on a single repo
+
+Eventually, you'll have to start thinking about .xlarge[merge conflicts]. This is especially true when you start to collaborate on a single repostory.
+
+If you edit the same line of code or text as your collaborator, you will need to _manually_ resolve the conflict.
+
+---
+class: exercise
+
+# Work in pairs
+
+1. Choose one of your repos
+2. Go into `Settings` --> `Collaborators`. Add your neighbor as a collaborator
+3. Accept the email invitation
+
+.img-small[
 ![](http://ohi-science.org/data-science-training/img/github_collab.png)
-
+]
 ---
 
 class: exercise
 
-# Try this!
+# Make a change
 
-Switch over to your _neighbor's_ repo:
-
-1. Accept your neighbor's invitation
-2. Create a GitHub RStudio project
-3. Make a change
-4. Pull + stage/commit + push
+1. The collaborator - create a new git repository in RStudio
+2. Both - make and commit a change ON THE SAME LINE
+3. Collaborator - PUSH the change
+4. Repo owner - PULL
+5. Repo owner - resolve the conflict, COMMIT, and PUSH
 
 ---
 
 class: inverse, center, middle
 # GITting stuck - how to save yourself
+
 ---
 # https://happygitwithr.com/
 
@@ -388,9 +426,10 @@ Ultimate guide for R/RStudio workflows with git/GitHub
 - installation problems
 - connecting GitHub to an RStudio project (or vice versa)
 - setting up ssh
-- how to "burn it all down" `r icon::fa_fire()`
+- how to "burn it all down" `r emo::ji("fire")`
 
 ---
+
 # Use the terminal
 
 Most of the resources online tell you what series of `git` commands to use to achieve your goal. The **terminal** is where you can type those commands
