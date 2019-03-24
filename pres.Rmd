@@ -379,7 +379,7 @@ Switch over to your _neighbor's_ repo:
 ---
 
 class: inverse, center, middle
-# Getting stuck - how to save yourself
+# GITting stuck - how to save yourself
 ---
 # https://happygitwithr.com/
 
