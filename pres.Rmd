@@ -1,7 +1,6 @@
 ---
-title: "Version control & RMarkdown"
-subtitle: "EcoDataSci-TLV"
-date: "2018-11-27"
+title: "Version control"
+date: "2019-03-24"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -10,6 +9,7 @@ output:
     nature:
       highlightStyle: github
       highlightLines: true
+      ratio: '16:9'
 ---
 
 ```{r setup, include=FALSE}
@@ -17,20 +17,22 @@ options(htmltools.dir.version = FALSE)
 library(tidyverse)
 library(icon)
 ```
+
+class: exercise
+
 # `r icon::fa_check()` Check-in
 
 To follow along, you should have:
 
 - a GitHub account - [create one now](https://github.com/) if you don't have one already!
-- git installed and connected to RStudio (detailed installation instructions [here](http://happygitwithr.com/installation-pain.html))
+- git installed and connected to RStudio (detailed installation instructions at [Happy Git with R](https://happygitwithr.com/workshops.html#pre-workshop-set-up))
 
-Ask questions and share resources on the [EcoDataSci-TLV Slack](https://ecodatascitlv.slack.com/messages)
 ---
 This presentation is based on:
 
-http://ohi-science.org/data-science-training/github.html
-
-& https://nceas.github.io/training-git-intro/getting-started-with-git-rstudio.html
+[Happy Git with R](http://happygitwithr.com)  
+[NCEAS GitHub crash course](https://nceas.github.io/training-git-intro/getting-started-with-git-rstudio.html)  
+[Ocean Health Index GitHub training](http://ohi-science.org/data-science-training/github.html)
 
 ---
 background-image: url(http://www.phdcomics.com/comics/archive/phd101212s.gif)
@@ -42,9 +44,10 @@ background-size: auto 100%
 # Why learn and use git/GitHub? 
 
 - Version control
-- Easy to share/distribute files, especially code/analyses
+- Easy to share and distribute files, especially code/analyses
 - Files accessible from anywhere with an internet connection
 - Improves collaboration
+- Contribute to open source!
 
 --
 
@@ -56,21 +59,29 @@ background-position: center
 background-size: cover
 
 ---
-# `r fa_git()`
+# git
 
+.pull-left[
 Version control system that lives on your computer. Think "track changes" for files
+]
 
---
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Cropped-big-brother-is-watching-1984.png/800px-Cropped-big-brother-is-watching-1984.png" width=60%>
+.pull-right[
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Cropped-big-brother-is-watching-1984.png/800px-Cropped-big-brother-is-watching-1984.png" width=100%>
+]
 
 ---
-# `r fa_git()` is not
+# git is _not_
 
+.pull-left[
 - a full backup
 - meant for data, images, etc
 
 git works best with _text-based_ files!
+]
 
+.pull-right[
+![](img/diffs.PNG)
+]
 ---
 # GitHub `r fa_github()`
 
@@ -84,7 +95,7 @@ git works best with _text-based_ files!
 
 --
 <br>  
-You get unlimited private GitHub repositories for _free_ (normally $7/month) while you are a student! Sign up [here](https://education.github.com/pack).
+You get unlimited private GitHub repositories for _free_ (used to be $7/month)! 
 
 ---
 background-image: url(http://ohi-science.org/data-science-training/img/commit_compare_3.png)
@@ -105,9 +116,18 @@ class: inverse, center, middle
 
 # GitHub: let's get oriented!  
 ---
-background-image: url(img/github-account.png)
-background-position: center
-background-size: 100%
+class: exercise
+
+Take a moment to explore this repository: 
+
+# https://github.com/isteves/typos
+
+- What is the repository name?
+- When was the repository first created?
+- What changes have been made to the repository?
+- What issues have been submitted?
+- What pull-requests (PRs) have been submitted?
+- Are there any forks or branches?
 
 ---
 background-image: url(img/github-account.png)
@@ -122,6 +142,8 @@ background-image: url(img/github-commits.png)
 background-position: center
 background-size: 100%
 ---
+class: exercise
+
 # Let's create a repo from scratch...  
 ### (choose a unique name!)
 
@@ -130,7 +152,7 @@ background-size: 100%
 ] 
 
 - don't use special characters
-- name it `something_meaningful` and not `too-long`
+- name it `something_meaningful` and `not-too-long`
 - note for advanced users: R packages cannot take underscores or dashes
 ---
 class: inverse
@@ -228,86 +250,14 @@ read.csv("C:/חזי/phd/thesis/reef_surveys/data/eilat_survey_2017.csv")
 
 You never have to use `setwd()` again! 
 
----
-class: inverse, center, middle
-# RMarkdown Demo & Exercise
----
-#This presentation is based on:
+--
 
-https://rmarkdown.rstudio.com/lesson-1.html
-
-https://bookdown.org/yihui/rmarkdown/
-
-https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
-
-https://ourcodingclub.github.io/2016/11/24/rmarkdown-1.html
-
----
-## __What is markdown?__
-
-A lightweight text editor originally built to be presented as html
-
-<p><img src="https://raw.githubusercontent.com/ecodatasci-tlv/git-rmd/master/Markdown_image.jpeg" width=90%>
-
----
-## __What is Rmarkdowm?__
-
-A __one-stop-shop__ for writing code and sharing your work with various formats
-
-<p><img src="https://tinyurl.com/yc9aqyna" center width=30%>
-
+**Pro tip:** use `here::here()` to deal with path differences across Rmd's, R scripts, and Shiny apps.
 ---
 
-# __Type of outputs for Rmarkdown__ 
+class: exercise
 
-- Research notebook ([R Notebook](https://bookdown.org/yihui/rmarkdown/notebook.html))
-- Reports ([html](https://bookdown.org/yihui/rmarkdown/html-document.html), [pdf](https://bookdown.org/yihui/rmarkdown/pdf-document.html), or [word](https://bookdown.org/yihui/rmarkdown/word-document.html))
-- Websites ([Rmarkdown wbsite](https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html)\ [blogdown](https://bookdown.org/yihui/rmarkdown/blogdown-start.html))
-- Books ([bookdown](https://bookdown.org/yihui/rmarkdown/books.html))
-- Presentations ([xringan](https://bookdown.org/yihui/rmarkdown/xaringan.html)\ [ioslides](https://bookdown.org/yihui/rmarkdown/ioslides-presentation.html))
-
----
-# __The different parts of Rmarkdown__
-<p><img src="https://raw.githubusercontent.com/ecodatasci-tlv/git-rmd/master/rmd_example.png" width=110%>
-
----
-## YAML header 
-
-- Must be enclosed in `---`
-- output section changes based on the type of ducument
-
-```r
----
-title: "Edinburgh Biodiversity"
-author: John Doe
-date: 22/Oct/2016
-output: html_document
----
-
-```
-
----
-## Code chunk
-
-- The chunk must be enclosed between ` ``` ` and then `{r}` at the top
-- keybord shortcut: ctrl + Alt + I (Windows) or cmd + Alt + I (MacOS)
-
-<p><img src="https://tinyurl.com/ybpbbe4f" width=70%>
-
----
-## __Plain text__
-
-Here you write everything that isn't a code by using markdown related symbols to create headers, bold text , etc.
-
----
-## __Workflow of Rmd file__
-
-<p><img src="https://tinyurl.com/ycgusx7u" width=100%>
-
-You create an Rmd file, then you knit it with knitr package, it is passed to one of the rendering packages like pandoc or LaTex, and the final format is created
-
----
-# __Practice time__
+# Practice time
 
 1. Open an Rmd file in the project you created before
 2. Choose the type of document you want to create
@@ -315,169 +265,55 @@ You create an Rmd file, then you knit it with knitr package, it is passed to one
 4. Click on the knit botton at the top bar (or ctrl/cmd + shift + K)
 
 ---
-__Congradulations!!!__ 🎉 🎊 🥳 You created your first Rmd file!! `r emo::ji("smile")`
-
-<p><img src="https://www.chronicle.com/blogs/profhacker/files/2018/01/markdowncat.jpg" width=100%>
-
-
----
 class: inverse, center, middle
-
-# __Rmd plain text syntax__
-
-<p><img src="https://raw.githubusercontent.com/ecodatasci-tlv/git-rmd/master/Markdown_image2.jpeg" width=120%>
-
+# Basic git flow ~ courtship cycle 
 ---
+# First, **pull** them in
 
-# __Headers__
-
-```{r}
-# Header 1
-## Header 2
-### Header 3
-#### Header 4
-##### Header 5
-###### Header 6
-```
-
-
+.center[
+<img src="img/pull.jpg" width=60%>
+]
 ---
-# Header 1
-## Header 2
-### Header 3
-#### Header 4
-##### Header 5
-###### Header 6
+# Then, **stage** & **commit**
 
+.center[
+<img src="img/commit.jpg" width=60%> 
+]
 ---
-## Alternatively, for H1 and H2, an underline-ish style:
+# Finally, **push** out babies 
 
-```
-
-Alt-H1
-======
-
-Alt-H2
-------
-
-```
-
-Alt-H1
-======
-
-Alt-H2
-------
-
----
-
-# Highlight text
-
-
-
-__Bold text__ ` __Bold__` or ` **Bold** `
-
-_Italics_ ` _Italics_ ` or ` *Italics* `
-
-~~strikethrough~~ `~~strikethrough~~`
-
----
-
-### Use these two links to learn how to adapt the text and the code to your needs:
-
-https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf
-
-https://ourcodingclub.github.io/2016/11/24/rmarkdown-1.html
-
----
-
-class: inverse, center, middle
-
-# __Other formats of Rmarkdown___
-
-<p><img src="https://pbs.twimg.com/media/DcrW6_UWkAAVjnB.jpg" width=90%>
-
----
-
-## The YAML header for website
-Here is an example from the website used in our last session
-```r
----
-title: "Visualizations in R"
-author: "Alex Slavenko and Maria Novosolov"
-output:  
-  html_document:  
-    toc: true  
-    toc_float: true
-    collapsed: true
-    smooth_scroll: true
-    toc_depth: 3
-    runtime: shiny_prerendered
-    # number_sections: true
----
-
-```
-
----
-# __Books__
-
-### - Writen similar to a webslite but has a different YAML header
-
-### - Uses `bookdown` package to generate
-
-
-
----
-More information and __websites__ and guidlines on how to build them can be found [here](https://bookdown.org/yihui/rmarkdown/websites.html)
-
-More information about how to build __books__ can be found [here](https://bookdown.org/yihui/rmarkdown/books.html)
----
-class: inverse, center, middle
-# Basic git flow ~ life cycle of a relationship
----
-# First, you **pull** them in
-
-![](https://media.giphy.com/media/ycpCka5zPAUvMr6PU6/giphy.gif)
-
----
-# Then, you **stage** & **commit**
-
-![](https://media.giphy.com/media/3QAUnTsafSMQE/giphy.gif)
----
-# Finally, you **push** out babies 
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Egg_laying_-_Harmonia_axyridis_%282127209595%29.jpg" width=50%> 
-
---
-
-## (or **push** them away...) <img src="https://media.giphy.com/media/7vzG5HU8nE2pCJbUGj/giphy.gif" width =50%>
+.center[
+<img src="img/push.jpg" width=60%> 
+]
 ---
 background-image: url(http://ohi-science.org/data-science-training/img/push_pull_clone.png)
 background-position: center
-background-size: 50%
+background-size: auto 90%
 
 ---
 # Sync from RStudio to GitHub
 
+.center[
 ![](http://ohi-science.org/data-science-training/img/commit_overview.png)
-
-![http://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf](img/version-control-rstudio-cheatsheet.PNG)
-
-http://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf
+.img-small[
+[![http://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf](img/version-control-rstudio-cheatsheet.PNG)](http://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf)
+]
+]
 
 ---
-background-image:url(https://media.giphy.com/media/ycpCka5zPAUvMr6PU6/giphy.gif), url(http://ohi-science.org/data-science-training/img/pull.png)
+background-image:url(img/pull.jpg), url(http://ohi-science.org/data-science-training/img/pull.png)
 background-position: bottom right, center
 background-size: 30%, 100%
 ---
-background-image:url(https://media.giphy.com/media/3QAUnTsafSMQE/giphy.gif), url(http://ohi-science.org/data-science-training/img/staged.png)
+background-image:url(img/commit.jpg), url(http://ohi-science.org/data-science-training/img/staged.png)
 background-position: bottom right, center
 background-size: 30%, 100%
 ---
-background-image:url(https://media.giphy.com/media/3QAUnTsafSMQE/giphy.gif), url(http://ohi-science.org/data-science-training/img/commit.png)
+background-image:url(img/commit.jpg), url(http://ohi-science.org/data-science-training/img/commit.png)
 background-position: bottom right, center
 background-size: 30%, 100%
 ---
-background-image:url(https://upload.wikimedia.org/wikipedia/commons/f/f1/Egg_laying_-_Harmonia_axyridis_%282127209595%29.jpg), url(http://ohi-science.org/data-science-training/img/push.png)
+background-image:url(img/push.jpg), url(http://ohi-science.org/data-science-training/img/push.png)
 background-position: bottom right, center
 background-size: 30%, 100%
 ---
@@ -491,8 +327,6 @@ class: inverse, center, middle
 background-image: url(img/github-pages.PNG)
 background-position: center
 background-size: 90%
-
-In your repo settings (scroll down):
 ---
 # A few tricks
 
@@ -512,20 +346,26 @@ output:
 class: inverse, center, middle
 # Let's collaborate!
 ---
+
+class: exercise
+
 # `r icon::fa_check()` Check-in
 
 You should have:
 - a repository on GitHub
-- an RProject linked to the GitHub repository
+- an RProject linked to the GitHub repository 
 
 ---
-# Try this!
 
-In your GitHub repo, go into `Settings` --> `Collaborators`.  Add your neighbor as a collaborator
+class: exercise
+
+Go into `Settings` --> `Collaborators`.  Add your neighbor as a collaborator
 
 ![](http://ohi-science.org/data-science-training/img/github_collab.png)
 
 ---
+
+class: exercise
 
 # Try this!
 
@@ -537,9 +377,32 @@ Switch over to your _neighbor's_ repo:
 4. Pull + stage/commit + push
 
 ---
+
+class: inverse, center, middle
+# Getting stuck - how to save yourself
+---
+# https://happygitwithr.com/
+
+Ultimate guide for R/RStudio workflows with git/GitHub
+
+- installation problems
+- connecting GitHub to an RStudio project (or vice versa)
+- setting up ssh
+- how to "burn it all down" `r icon::fa_fire()`
+
+---
+# Use the terminal
+
+Most of the resources online tell you what series of `git` commands to use to achieve your goal. The **terminal** is where you can type those commands
+
+.center[
+.img-small[
+![](img/terminal.png)
+]]
+---
 # There's more!  
 
-...but we'll cover these next time.  In the mean time,  check out these resources for step-by-step guides for:
+Check out these resources for step-by-step guides for:
 
 - using `gitignore` to tell git what NOT to track
 - dealing with merge conflicts
